@@ -1,0 +1,56 @@
+@import "./constants";
+
+.grid {
+    position: relative;
+    min-height: 50%;
+    background-color: $grey;
+    margin :20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    overflow: auto;
+    gap: 0.7em;
+  
+    .portfolio {
+      gap: 0.5em;
+      margin: 1em;
+      img {
+        transition: 4s;
+        box-shadow: 0 4px 8px 0 rgb(44, 44, 44);
+        width: 100%;
+        height: 100%;
+        display:grid;
+        border-radius: 30px;
+        object-fit: cover;
+        
+      }
+      .button {
+        transition: 0.5s;
+        position: absolute;
+        opacity: 0;
+        align-items: center;
+        transform: translate(160px, -220px);
+        text-decoration: none;
+        text-align: center;
+        background-color:rgb(68,68,192) ;
+        border: 1px solid rgb (68, 68, 192);
+        padding: 0.7em;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  .portfolio:hover .image {
+    opacity: 0;
+  }
+  .portfolio:hover .button {
+    opacity: 1;
+    position: absolute;
+  }
+  
+  @media screen and (max-width: 400px){
+    .grid{
+      grid-template-columns: 3fr;
+    }
+  
+  }
